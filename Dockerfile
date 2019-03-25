@@ -1,7 +1,7 @@
 FROM node:8.15.1-alpine
 
 RUN apk upgrade && \
-    apk add --no-cache curl dpkg && \
+    apk add --no-cache curl dpkg git && \
     # install gosu
     dpkgArch="$(dpkg --print-architecture | awk -F- '{ print $NF }')" && \
     curl -fsSL "https://github.com/tianon/gosu/releases/download/1.10/gosu-$dpkgArch" -o /usr/local/bin/gosu && \
