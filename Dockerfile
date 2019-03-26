@@ -1,6 +1,8 @@
 FROM node:8.15.1-alpine
 
 RUN apk upgrade && \
+    addgroup -g 10000 jenkins && \
+    adduser -u 10000 -G jenkins -s /bin/sh -D jenkins && \
     apk add --no-cache curl dpkg git && \
     # install gosu
     dpkgArch="$(dpkg --print-architecture | awk -F- '{ print $NF }')" && \
