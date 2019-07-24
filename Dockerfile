@@ -10,7 +10,7 @@ RUN apk upgrade && \
     chmod +x /usr/local/bin/gosu && \
     gosu nobody true && \
     # complete gosu
-    npm install -g bower polymer-cli --unsafe-perm && \
+    npm install -g bower gulp polymer-cli --unsafe-perm && \
     mkdir /src && chown node:node /src && \
     # entrypoint script
     echo $'#!/bin/bash\n\
